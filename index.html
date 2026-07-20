@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash flow Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cash Flow Dashboard</h1>
+    <form id="salaryForm">
+  <fieldset>
+    <legend>Cash Flow Form</legend>
+  <select id="currencySelect">
+    <option value="INR">INR</option>
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+    <option value="JPY">JPY</option>
+</select>
+
+    <div class="form-group">
+      <label for="salaryInput">Salary:</label>
+      <input type="number" id="salaryInput" name="salaryInput" placeholder="Enter your Salary" required>
+    </div>
+
+        <div class="form-actions">
+    <button type="submit">Save Salary</button>
+  </div>
+
+    </fieldset>
+    </form>
+    <form id="expenseForm">
+        <fieldset>
+
+        <legend>Expenses</legend>
+    <div class="form-group">
+      <label for="expenseName">Name:</label>
+      <input type="text" id="expenseName" name="expenseName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="expenseAmount">Expense Amount:</label>
+      <input type="number" id="expenseAmount" name="expenseAmount" required>
+    </div>
+    <div class="form-actions">
+    <button type="submit">Add Expense</button>
+  </div>
+  <p id="errorMessage"></p>
+</fieldset>
+
+</form>
+<div class="dashboard">
+<div class="card">
+    <h3>
+    Salary: 
+        <span id="salaryDisplay">₹0</span>
+    </h3>
+</div>
+
+<div class="card" id="balanceCard">
+    <h3>Balance: 
+        <span id="balanceDisplay">₹0</span>
+    </h3>
+</div class="card">
+</div>
+<div class="expense-card">
+    <h3>Expense List: </h3>
+
+<ul id="expenseList">
+
+</ul>
+</div>
+<div id="totalExpense">
+  <p>Total Expense: <span id="totalExpenseDisplay">₹0</span></p>
+</div>
+<div class="chart-container">
+    <canvas id="expenseChart"></canvas>
+</div>
+<button id="downloadBtn">
+   Download Report
+</button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</html>
