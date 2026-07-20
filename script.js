@@ -64,6 +64,7 @@ function updateBalance() {
   let threshold = salary * 0.1;
   if (balance < threshold) {
     balanceCard.classList.add("danger");
+    alert("Balance too low");
   } else {
     balanceCard.classList.remove("danger");
   }
