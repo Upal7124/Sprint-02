@@ -49,6 +49,7 @@ salaryForm.addEventListener("submit", function (event) {
   updateBalance();
 });
 function updateBalance() {
+  totalExpenses = 0;
   for (let i = 0; i < expenses.length; i++) {
     totalExpense += expenses[i].amount;
   }
